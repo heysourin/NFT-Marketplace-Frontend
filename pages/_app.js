@@ -1,5 +1,12 @@
-// import "../styles/globals.css";
+import { Footer, Navbar } from "../components/componentIndex";
+import "../styles/globals.css";
 
-const MyApp = ({ Component, pageProps }) => <Component {...pageProps} />;
+const MyApp = ({ Component, pageProps }) => (
+  <div>
+    <Navbar/>
+    <Footer/>
+    <Component {...pageProps} />;
+  </div>
+);
 
 export default MyApp;
