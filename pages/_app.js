@@ -3,9 +3,9 @@ import "../styles/globals.css";
 
 const MyApp = ({ Component, pageProps }) => (
   <div>
+    <Component {...pageProps} />
     <Navbar/>
     <Footer/>
-    <Component {...pageProps} />;
   </div>
 );
 

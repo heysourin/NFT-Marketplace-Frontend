@@ -5,10 +5,11 @@ import Link from 'next/link'
 import { MdNotifications } from 'react-icons/md'
 import { BsSearch } from 'react-icons/bs'
 import { CgMenuLeft, CgMenuRight } from 'react-icons/cg'
+import { useRouter } from 'next/router'
 
 // Internal import
 import Style from './Navbar.module.css'
-import { Discover, Helpcenter, Notifiaction, Profile, Sidebar } from './index'
+import { Discover, HelpCenter, Notification,  [2i q] Profile, Sidebar } from './index'
 import { Button, Error } from '../componentIndex'
 import images from '../../img'
 
@@ -20,6 +21,7 @@ const Navbar = () => {
   const [profile, setProfile] = useState(false)
   const [openSideMenu, setOpenSideMenu] = useState(false)
 
+  const router = useRouter();
   //TO open the menu
   const openMenu = (e) => {
     const btnText = e.target.innerText
@@ -28,7 +30,7 @@ const Navbar = () => {
       setHelp(false)
       setNotification(false)
       setProfile(false)
-    } else if (btnText == 'HelpCenter') {
+    } else if (btnText == 'Help Center') {
       setDiscover(false)
       setHelp(true)
       setNotification(false)
@@ -79,41 +81,48 @@ const Navbar = () => {
           <div className={Style.logo}>
             <Image src={images.logo} alt="Logo" width={100} height={100} />
             <div className={Style.navbar_container_left_box_input}>
-              <div className={Style.navbar_container_left_input_box}>
+              <div className={Style.navbar_container_left_box_input_box}>
                 <input type="text" placeholder="Search NFT" />
-                <BsSearch onClick={() => {}} className={Style.searchIcon} />
+                <BsSearch onClick={() => {}} className={Style.search_icon} />
               </div>
             </div>
           </div>
         </div>
+
+        {/* //Left Section Ends */}
         {/* //Right Section Starts */}
+
         <div className={Style.navbar_container_right}>
           <div className={Style.navbar_container_right_discover}>
-            <p onClick={(e) => openMenu(e)}>Discover</p>
             {/*//Todo:Discover: Dynamic block, If discover is false (Default case here) then we dont want to hide it */}
+            <p onClick={(e) => openMenu(e)}>Discover</p>
             {discover && (
               <div className={Style.navbar_container_right_discover_box}>
                 <Discover />
               </div>
             )}
           </div>
+
           {/* //Todo: HelpCenter */}
           <div className={Style.navbar_container_right_help}>
             <p onClick={(e) => openMenu(e)}>Help Center</p>
             {help && (
               <div className={Style.navbar_container_right_help_box}>
-                <Helpcenter />
+                <HelpCenter />
               </div>
             )}
           </div>
+
+
           {/* //Todo: Notifications */}
           <div className={Style.navbar_container_right_notify}>
             <MdNotifications
               className={Style.notify}
-              onclick={() => openNotification}
+              onclick={(e) => openNotification(e)}
             />
             {notification && <Notification />}
           </div>
+
           {/* //Todo: BUTTON SECTION */}
           {/* <div className={Style.navbar_container_right_button}>
             {currentAccount == '' ? (
@@ -125,8 +134,9 @@ const Navbar = () => {
               />
             )}
           </div> */}
-          {/*//Todo: USER PROFILE */}
 
+
+          {/*//Todo: USER PROFILE */}
           <div className={Style.navbar_container_right_profile_box}>
             <div className={Style.navbar_container_right_profile}>
               <Image
@@ -141,8 +151,9 @@ const Navbar = () => {
               {profile && <Profile currentAccount={currentAccount} />}
             </div>
           </div>
-          {/*//Todo: MENU BUTTON, Only Mobile */}
 
+
+          {/*//Todo: MENU BUTTON, Only Mobile */}
           <div className={Style.navbar_container_right_menuBtn}>
             <CgMenuRight
               className={Style.menuIcon}
