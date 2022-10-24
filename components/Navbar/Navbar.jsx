@@ -159,7 +159,7 @@ const Navbar = () => {
             </div>
           </div>
 
-          {/* MENU BUTTON */}
+          {/* MENU BUTTON: FOR MOBILE VERSION */}
 
           <div className={Style.Navbar_container_right_menuBtn}>
             <CgMenuRight
@@ -170,13 +170,13 @@ const Navbar = () => {
         </div>
       </div>
 
-      {/* SIDBAR CPMPONE/NT */}
+      {/* SIDBAR COMPONENT */}
       {openSideMenu && (
         <div className={Style.Sidebar}>
           <Sidebar
             setOpenSideMenu={setOpenSideMenu}
-            currentAccount={currentAccount}
-            connectWallet={connectWallet}
+            // currentAccount={currentAccount}
+            // connectWallet={connectWallet}
           />
         </div>
       )}
