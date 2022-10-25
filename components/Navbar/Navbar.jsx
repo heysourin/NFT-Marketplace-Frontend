@@ -83,14 +83,14 @@ const Navbar = () => {
   // );
 
   return (
-    <div className={Style.Navbar}>
-      <div className={Style.Navbar_container}>
-        <div className={Style.Navbar_container_left}>
+    <div className={Style.navbar}>
+      <div className={Style.navbar_container}>
+        <div className={Style.navbar_container_left}>
           <div className={Style.logo}>
             <DiJqueryLogo onClick={() => router.push("/")} />
           </div>
-          <div className={Style.Navbar_container_left_box_input}>
-            <div className={Style.Navbar_container_left_box_input_box}>
+          <div className={Style.navbar_container_left_box_input}>
+            <div className={Style.navbar_container_left_box_input_box}>
               <input type="text" placeholder="Search NFT" />
               <BsSearch onClick={() => {}} className={Style.search_icon} />
             </div>
@@ -98,13 +98,13 @@ const Navbar = () => {
         </div>
 
         {/* //END OF LEFT SECTION */}
-        <div className={Style.Navbar_container_right}>
-          <div className={Style.Navbar_container_right_discover}>
+        <div className={Style.navbar_container_right}>
+          <div className={Style.navbar_container_right_discover}>
             {/* DISCOVER MENU */}
             <p onClick={(e) => openMenu(e)}>Discover</p>
             {/* Dynamic block: if dicover is false(which in default in this case) then we dont want to hide it.  */}
             {discover && (
-              <div className={Style.Navbar_container_right_discover_box}>
+              <div className={Style.navbar_container_right_discover_box}>
                 {/* calling discover component  */}
                 <Discover /> 
               </div>
@@ -112,17 +112,17 @@ const Navbar = () => {
           </div>
 
           {/* HELP CENTER MENU */}
-          <div className={Style.Navbar_container_right_help}>
+          <div className={Style.navbar_container_right_help}>
             <p onClick={(e) => openMenu(e)}>Help Center</p>
             {help && (
-              <div className={Style.Navbar_container_right_help_box}>
+              <div className={Style.navbar_container_right_help_box}>
                 <HelpCenter />
               </div>
             )}
           </div>
 
           {/* NOTIFICATION */}
-          <div className={Style.Navbar_container_right_notify}>
+          <div className={Style.navbar_container_right_notify}>
             <MdNotifications
               className={Style.notify}
               onClick={() => openNotification()}
@@ -131,7 +131,7 @@ const Navbar = () => {
           </div>
 
           {/* CREATE BUTTON SECTION */}
-          {/* <div className={Style.Navbar_container_right_button}>
+          {/* <div className={Style.navbar_container_right_button}>
             {currentAccount == "" ? (
               <Button btnName="Connect" handleClick={() => connectWallet()} />
             ) : (
@@ -144,15 +144,15 @@ const Navbar = () => {
 
           {/* USER PROFILE */}
 
-          <div className={Style.Navbar_container_right_profile_box}>
-            <div className={Style.Navbar_container_right_profile}>
+          <div className={Style.navbar_container_right_profile_box}>
+            <div className={Style.navbar_container_right_profile}>
               <Image
                 src={images.user1}
                 alt="Profile"
                 width={40}
                 height={40}
                 onClick={() => openProfile()}
-                className={Style.Navbar_container_right_profile}
+                className={Style.navbar_container_right_profile}
               />
 
               {profile && <Profile currentAccount={currentAccount} />}
@@ -161,7 +161,7 @@ const Navbar = () => {
 
           {/* MENU BUTTON: FOR MOBILE VERSION */}
 
-          <div className={Style.Navbar_container_right_menuBtn}>
+          <div className={Style.navbar_container_right_menuBtn}>
             <CgMenuRight
               className={Style.menuIcon}
               onClick={() => openSidebar()}

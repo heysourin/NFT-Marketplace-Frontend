@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700;900&display=swap');
 html,
 body {
   padding: 0;
@@ -14,7 +15,9 @@ a {
 * {
   box-sizing: border-box;
 }
-
+::selection{
+  color: blue;
+}
 @media (prefers-color-scheme: dark) {
   html {
     color-scheme: dark;
