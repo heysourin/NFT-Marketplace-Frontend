@@ -1,0 +1,16 @@
+.navbar{
+    width: 100%;
+    padding-block: 1.5rem;
+    position: relative;
+    z-index: 11111111;
+}
+
+.navbar_container{
+    width: 80%;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+}
