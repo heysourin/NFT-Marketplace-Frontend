@@ -10,7 +10,7 @@ import { useRouter } from "next/router";
 
 //INTERNAL IMPORT
 import Style from "./Navbar.module.css";
-import { Discover, HelpCenter, Notification, Profile, Sidebar } from "./index";
+import { Discover, HelpCenter, Notification, Profile} from "./index";
 import { Button, Error } from "../componentsindex";
 import images from "../../img";
 
@@ -69,13 +69,13 @@ const Navbar = () => {
     }
   };
 
-  const openSidebar = () => {
-    if (!openSideMenu) {
-      setOpenSideMenu(true);
-    } else {
-      setOpenSideMenu(false);
-    }
-  };
+  // const openSidebar = () => {
+  //   if (!openSideMenu) {
+  //     setOpenSideMenu(true);
+  //   } else {
+  //     setOpenSideMenu(false);
+  //   }
+  // };
 
   //SMART CONTRACT SECTION
   // const { currentAccount, connectWallet, openError } = useContext(
@@ -164,14 +164,14 @@ const Navbar = () => {
           <div className={Style.navbar_container_right_menuBtn}>
             <CgMenuRight
               className={Style.menuIcon}
-              onClick={() => openSidebar()}
+              // onClick={() => openSidebar()}
             />
           </div>
         </div>
       </div>
 
       {/* SIDBAR COMPONENT */}
-      {openSideMenu && (
+      {/* {openSideMenu && (
         <div className={Style.Sidebar}>
           <Sidebar
             setOpenSideMenu={setOpenSideMenu}
@@ -179,7 +179,7 @@ const Navbar = () => {
             // connectWallet={connectWallet}
           />
         </div>
-      )}
+      )} */}
 
       {/* {openError && <Error />} */}
     </div>

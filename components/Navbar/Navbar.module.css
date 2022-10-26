@@ -39,7 +39,7 @@
     padding: .5rem;
     border-radius: 2rem;
     background-color: transparent;
-    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.557);
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.255);
 }
 
 .navbar_container_left_box_input_box input{
