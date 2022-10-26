@@ -136,6 +136,7 @@
     display: none;
 }
 
+
 @media screen and (min-device-width: 320px) and (max-device-width: 768px) {
     .navbar_container{
         grid-template-columns: 1fr 1fr;
@@ -172,4 +173,6 @@
     .sideBar{
         display: block;
     }
+
+
 }

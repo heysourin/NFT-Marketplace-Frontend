@@ -134,13 +134,16 @@ const Navbar = () => {
           {/* <div className={Style.navbar_container_right_button}>
             {currentAccount == "" ? (
               <Button btnName="Connect" handleClick={() => connectWallet()} />
-            ) : (
-              <Button
+              ) : (
+                <Button
                 btnName="Create"
                 handleClick={() => router.push("/uploadNFT")}
-              />
-            )}
+                />
+                )}
           </div> */}
+                <Button btnName="Connect Wallet" handleClick={() => connectWallet()} className={Style.baton}/>
+
+
 
           {/* USER PROFILE */}
 
