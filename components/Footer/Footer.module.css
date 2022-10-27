@@ -14,7 +14,8 @@
     width: 80%;
     margin: 0 auto;
     display:  grid;
-    grid-template-columns: 1.3fr repeat(2, 1fr) 2fr;
+    grid-template-columns:repeat(4, 1fr) ;
+    flex-direction: row;
     align-items: flex-start;
     justify-content: space-between;
     gap: 3rem;
@@ -28,10 +29,10 @@
     align-items: center;
 }
 
-.footer_box_discover{
+/* .footer_box_discover{
     background: transparent;
     margin: 0 5rem;
-}
+} */
 
 
 
@@ -71,9 +72,9 @@
     color: var(--shadow-dark-color);
 }
 
-.subscribe_box input::placeholder{
+/* .subscribe_box input::placeholder{
     color:  var(--shadow-dark-color);
-}
+} */
 
 .subscribe_box_send{
     cursor: pointer;

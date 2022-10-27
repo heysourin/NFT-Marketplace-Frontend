@@ -1,6 +1,6 @@
-import React from "react";
-import Image from "next/image";
-import { DiJqueryLogo } from "react-icons/di";
+import React from 'react'
+import Image from 'next/image'
+import { DiJqueryLogo } from 'react-icons/di'
 import {
   TiSocialFacebook,
   TiSocialLinkedin,
@@ -9,13 +9,13 @@ import {
   TiSocialInstagram,
   TiArrowSortedDown,
   TiArrowSortedUp,
-} from "react-icons/ti";
-import { RiSendPlaneFill } from "react-icons/ri";
+} from 'react-icons/ti'
+import { RiSendPlaneFill } from 'react-icons/ri'
 
 //INTERNAL IMPORT
-import Style from "./Footer.module.css";
-import images from "../../img";
-import { Discover, HelpCenter } from "../NavBar/index";
+import Style from './Footer.module.css'
+import images from '../../img'
+import { Discover, HelpCenter } from '../NavBar/index'
 
 const Footer = () => {
   return (
@@ -53,7 +53,7 @@ const Footer = () => {
 
         <div className={Style.footer_box_discover}>
           <h3>Discover</h3>
-          <Discover style={{color: "orange"}}/>
+          <Discover/>
         </div>
 
         <div className={Style.footer_box_help}>
@@ -77,7 +77,7 @@ const Footer = () => {
         </div>
       </div>
     </div>
-  );
-};
+  )
+}
 
-export default Footer;
+export default Footer

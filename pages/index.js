@@ -1,13 +1,18 @@
-import React from 'react'
-import Style from "../styles/index.module.css"
-import {HeroSection,Service} from "../components/componentsindex" 
+import React from "react";
+import Style from "../styles/index.module.css";
+import {
+  HeroSection,
+  Service,
+  BigNFTSlider,
+} from "../components/componentsindex";
 const Home = () => {
   return (
     <div className={Style.homePage}>
-      <HeroSection/>
-      <Service/>
+      <HeroSection />
+      <Service />
+      <BigNFTSlider/>
     </div>
-  )
-}
+  );
+};
 
-export default Home
+export default Home;
