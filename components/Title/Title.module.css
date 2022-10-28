@@ -1,0 +1,14 @@
+.title{
+    width: 100%;
+}
+
+.title_box{
+    width: 80%;
+    margin: 0 auto;
+}
+
+.title_box h2{
+    font-size: 3rem;
+    line-height: 0;
+}
+
