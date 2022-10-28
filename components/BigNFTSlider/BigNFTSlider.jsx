@@ -1,24 +1,24 @@
-import React, { useState, useEffect, useCallback } from "react";
-import Image from "next/image";
-import { AiFillFire, AiFillHeart, AiOutlineHeart } from "react-icons/ai";
-import { MdVerified, MdTimer } from "react-icons/md";
-import { TbArrowBigLeftLines, TbArrowBigRightLine } from "react-icons/tb";
+import React, { useState, useEffect, useCallback } from 'react'
+import Image from 'next/image'
+import { AiFillFire, AiFillHeart, AiOutlineHeart } from 'react-icons/ai'
+import { MdVerified, MdTimer } from 'react-icons/md'
+import { TbArrowBigLeftLines, TbArrowBigRightLine } from 'react-icons/tb'
 
 //INTERNAL IMPORT
-import Style from "./BigNFTSilder.module.css";
-import images from "../../img";
-import Button from "../Button/Button";
+import Style from './BigNFTSilder.module.css'
+import images from '../../img'
+import Button from '../Button/Button'
 
 const BigNFTSilder = () => {
-  const [idNumber, setIdNumber] = useState(0);
+  const [idNumber, setIdNumber] = useState(0)
 
   const sliderData = [
     {
-      title: "Hello NFT",
+      title: 'Hello NFT',
       id: 1,
-      name: "Max",
-      collection: "GYm",
-      price: "00664 ETH",
+      name: 'Max',
+      collection: 'GYm',
+      price: '00664 ETH',
       like: 243,
       image: images.user1,
       nftImage: images.nft_image_1,
@@ -30,11 +30,11 @@ const BigNFTSilder = () => {
       },
     },
     {
-      title: "Buddy NFT",
+      title: 'Buddy NFT',
       id: 2,
-      name: "Nairobi",
-      collection: "Home",
-      price: "0000004 ETH",
+      name: 'Nairobi',
+      collection: 'Home',
+      price: '0000004 ETH',
       like: 243,
       image: images.user2,
       nftImage: images.nft_image_2,
@@ -46,11 +46,11 @@ const BigNFTSilder = () => {
       },
     },
     {
-      title: "Gym NFT",
+      title: 'Gym NFT',
       id: 3,
-      name: "Berlin",
-      collection: "GYm",
-      price: "0000064 ETH",
+      name: 'Berlin',
+      collection: 'GYm',
+      price: '0000064 ETH',
       like: 243,
       image: images.user3,
       nftImage: images.nft_image_3,
@@ -62,11 +62,11 @@ const BigNFTSilder = () => {
       },
     },
     {
-      title: "Home NFT",
+      title: 'Home NFT',
       id: 4,
-      name: "Rio",
-      collection: "GYm",
-      price: "4664 ETH",
+      name: 'Rio',
+      collection: 'GYm',
+      price: '4664 ETH',
       like: 243,
       image: images.user4,
       nftImage: images.nft_image_1,
@@ -77,28 +77,32 @@ const BigNFTSilder = () => {
         seconds: 15,
       },
     },
-  ];
+  ]
 
   //-------INC
   const inc = useCallback(() => {
     if (idNumber + 1 < sliderData.length) {
-      setIdNumber(idNumber + 1);
+      setIdNumber(idNumber + 1)
     }
-  }, [idNumber, sliderData.length]);
+  }, [idNumber, sliderData.length])
 
   //-------DEC
   const dec = useCallback(() => {
     if (idNumber > 0) {
-      setIdNumber(idNumber - 1);
+      setIdNumber(idNumber - 1)
     }
-  }, [idNumber]);
+  }, [idNumber])
 
   return (
     <div className={Style.bigNFTSlider}>
       <div className={Style.bigNFTSlider_box}>
+        {/* Leftside of the div  */}
         <div className={Style.bigNFTSlider_box_left}>
+          {/* Title of the NFT from sliderData  */}
           <h2>{sliderData[idNumber].title}</h2>
+
           <div className={Style.bigNFTSlider_box_left_creator}>
+            {/* Contains: Profile-image,'creator', verified-icon */}
             <div className={Style.bigNFTSlider_box_left_creator_profile}>
               <Image
                 className={Style.bigNFTSlider_box_left_creator_profile_img}
@@ -110,7 +114,7 @@ const BigNFTSilder = () => {
               <div className={Style.bigNFTSlider_box_left_creator_profile_info}>
                 <p>Creator</p>
                 <h4>
-                  {sliderData[idNumber].name}{" "}
+                  {sliderData[idNumber].name}{' '}
                   <span>
                     <MdVerified />
                   </span>
@@ -118,6 +122,7 @@ const BigNFTSilder = () => {
               </div>
             </div>
 
+            {/* Contains: Fire-icon, 'Collection', NFT 'collection' details(Gym in this case) */}
             <div className={Style.bigNFTSlider_box_left_creator_collection}>
               <AiFillFire
                 className={Style.bigNFTSlider_box_left_creator_collection_icon}
@@ -132,6 +137,7 @@ const BigNFTSilder = () => {
             </div>
           </div>
 
+          {/* Contains: Current-bid, NFT price, 'Auction ending in', Countdown */}
           <div className={Style.bigNFTSlider_box_left_bidding}>
             <div className={Style.bigNFTSlider_box_left_bidding_box}>
               <small>Current Bid</small>
@@ -183,6 +189,7 @@ const BigNFTSilder = () => {
             </div>
           </div>
 
+          {/* Contains: Left and Right Arrows  */}
           <div className={Style.bigNFTSlider_box_left_sliderBtn}>
             <TbArrowBigLeftLines
               className={Style.bigNFTSlider_box_left_sliderBtn_icon}
@@ -195,7 +202,9 @@ const BigNFTSilder = () => {
           </div>
         </div>
 
+        {/* //Todo: Right side starts */}
         <div className={Style.bigNFTSlider_box_right}>
+          {/* Contains: NFT image, Num of likes on it  */}
           <div className={Style.bigNFTSlider_box_right_box}>
             <Image
               src={sliderData[idNumber].nftImage}
@@ -211,7 +220,7 @@ const BigNFTSilder = () => {
         </div>
       </div>
     </div>
-  );
-};
+  )
+}
 
-export default BigNFTSilder;
+export default BigNFTSilder
