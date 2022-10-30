@@ -8,6 +8,8 @@ import {
   Title,
   Category,
   Filter,
+  NFTCard,
+  Collection,
 } from "../components/componentsindex";
 const Home = () => {
   return (
@@ -16,10 +18,18 @@ const Home = () => {
       <Service />
       <BigNFTSlider />
       <Title
+        heading="Filter By Collection"
+        paragraph="Discover the all outstanding NFTs accross all categories"
+      />
+      <Collection/>
+      <Title
         heading="Featured NFTs"
         paragraph="Discover the all outstanding NFTs accross all categories"
       />
         <Filter />
+        {/* TO be updated later */}
+        {/* <NFTCard/> */}
+
       <Title
         heading="Browse By Category"
         paragraph="Explore the NFTs in most featured categories"
